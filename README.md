@@ -1,7 +1,7 @@
-**Para empezar con el proyecto:**
-1-Clonarlo el proyecto con git
-2-Ir desde una terminal a la carpeta base del proyecto y luego ejecutar el comando "npm install", esto instalara las dependencias
-3-Por ultimo para ejectura el proyecto, usar el comando npm run start
+**Para empezar con el proyecto:**<br />
+1-Clonarlo el proyecto con git<br />
+2-Ir desde una terminal a la carpeta base del proyecto y luego ejecutar el comando "npm install", esto instalara las dependencias<br />
+3-Por ultimo para ejectura el proyecto, usar el comando npm run start<br /><br />
 
 Una vez hecho esto ya se puede comenzar a hacer cambios en el proyecto.
 
