@@ -13,7 +13,7 @@ Una vez hecho esto ya se puede comenzar a hacer cambios en el proyecto.<br /><br
 3- Con esto la rama ya se encuentra en el repositorio remoto.<br /><br />
 
 
-**Para hacer un pull de nuestra rama con la rama principal "main":** <br />
+**Para hacer unir nuestra rama con la rama principal "main":** <br />
 1- Ir a este link https://github.com/nicotolini/Ong-Project/pulls<br />
 2- Clickear en el boton de New pull Request o nuevo pull request<br />
 3- Clickear en el boton pequeño con texto "base" y buscar nuestra rama. Siguiendo el ej: "componente-button"<br />
