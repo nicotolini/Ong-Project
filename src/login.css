@@ -1,0 +1,9 @@
+#card{
+
+    background-image:linear-gradient(to bottom, #00000070  0%,#00000069  100% ),  url("loginCardBg.jpg");
+    
+    
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+}
