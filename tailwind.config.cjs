@@ -2,10 +2,16 @@
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    textShadow: {
+      'custom': '0 2px 4px rgba(0, 0, 0, 0.5)',
+    },
     extend:{
       colors: {
         black: "#000000",
-        white: "#FFFFFF",
+        white: {100: "#FFFFFF",
+                200: "#E6E6FA",
+                },
+
         violet: {
           100: "#E6E6FA",
           200: "#4D4DDB",
