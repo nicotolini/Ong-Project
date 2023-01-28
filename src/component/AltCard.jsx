@@ -1,6 +1,6 @@
 import React from "react";
 
-const Card = ({
+const AltCard = ({
   title,
   description,
   image,
@@ -10,9 +10,8 @@ const Card = ({
   rounded = "true",
 }) => {
   return (
-    // h-[193px] w-[305px]
     <div
-      className={` xl:p-3 rounded-lg ${bgColor} ${textColor} flex flex-col justify-center items-center text-center w-3/4 p-1 h-[140px] xl:justify-start xl:items-start xl:text-start xl:h-[169px] xl:w-[279px] lg:h-[140px] lg:w-[280px] 2xl:h-[188px] 2xl:w-[279px]`}
+      className={`  rounded-lg xl:p-3 ${bgColor} ${textColor} flex flex-col justify-center items-center text-center w-3/4 p-1 h-[140px] xl:justify-start xl:items-start xl:text-start xl:h-[169px] xl:w-[235px] lg:h-[140px] lg:w-[280px]`}
     >
       <div className="rounded-t">
         <div
@@ -41,4 +40,4 @@ const Card = ({
   );
 };
 
-export default Card;
+export default AltCard;
