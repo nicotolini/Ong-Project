@@ -3,10 +3,10 @@ import Subcribe from "./Subcribe";
 
 const Footer = () => {
   return (
-    <footer  className="bg-white-200">
-      <div className="bg-black  clip-paht h-[100vh] w-full bg-contain bg-no-repeat">
+    <footer  className="bg-white-200 ">
+      <div className="bg-black  clip-paht-footer h-[100vh] w-full bg-contain bg-no-repeat">
         <div className="flex text-white-100 md:items-center items-end md:flex-nowrap flex-wrap container mx-auto h-screen ">
-          <div className="flex flex-col gap-5 text-lg flex-1 md:items-start items-center min-w-[300px]  text-white  px-10">
+          <div className="flex flex-col gap-5 text-lg flex-1 md:items-start items-center min-w-[300px]  text-white  ">
             <div className="flex gap-4 md:justify-start  justify-center items-center pb-5 ml-[-5px] md:text-xl text-sm">
               <img src="footerICON.png" className="w-[20%]" alt="" />
               <h3 className="font-bold md:text-2xl text-lg">Job Search</h3>
