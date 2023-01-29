@@ -19,7 +19,7 @@ const Card = ({
           className={`h-[55px] w-[55px] ${
             rounded === "true" && "rounded-full"
           } ${
-            whiteBg === "true" ? "bg-white" : ""
+            whiteBg === "true" ? "bg-white-200" : ""
           } p-0 m-0 flex items-center justify-center`}
         >
           <img
