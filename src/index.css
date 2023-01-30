@@ -22,3 +22,9 @@
 * {
   font-family: "Open Sans", sans-serif;
 }
+
+.flex_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
