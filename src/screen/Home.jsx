@@ -1,11 +1,19 @@
 import React from "react";
-import { Select } from "../component/Select";
+import Footer from "../component/Footer";
+import PopularCategories from "../component/PopularCategories";
+import TopCompanies from "../component/TopCompanies";
+import { Loking } from "./Loking";
+import { Testimonial } from "./Testimonial";
 
 const Home = () => {
   return (
-    <div>
-      <Select />
-    </div>
+    <>
+      <PopularCategories />
+      <TopCompanies />
+      <Loking />
+      <Testimonial />
+      <Footer />
+    </>
   );
 };
 
