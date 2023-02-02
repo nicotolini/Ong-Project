@@ -8,6 +8,7 @@ import { Testimonial } from "./Testimonial";
 const Home = () => {
   return (
     <>
+      
       <PopularCategories />
       <TopCompanies />
       <Loking />
