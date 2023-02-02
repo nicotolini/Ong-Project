@@ -18,6 +18,7 @@ module.exports = {
           gradient: "linear-gradient(255.2deg, #2A2AD1 -5.67%, #4D4DDB 108.81%)",
           "gradient-light": "linear-gradient(265.89deg, #4D4DDB -9.01%, #4D4DDB 116.41%)",
           "gradient-strong": "linear-gradient(110.71deg, rgba(23, 23, 92, 0.7) -28.45%, rgba(0, 0, 0, 0.49) 123.93%)",
+          "gradient-navbar": "linear-gradient(255.2deg, #2A2AD1 -5.67%, #4D4DDB 108.81%)",
         },
         red: "#ED4C5C",
       },
