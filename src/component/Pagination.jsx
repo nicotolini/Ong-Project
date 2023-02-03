@@ -9,7 +9,7 @@ export const Pagination = ({ pages = 1, onPageChange }) => {
   }, [isActive]);
 
   return (
-    <div className="flex gap-[24px]">
+    <div className="flex_center gap-[24px] pt-[44px]">
       <PaginationButton onClick={() => setIsActive((prev) => (prev - 1 === 0 ? prev : prev - 1))}>
         <img src="./previcon.svg" alt="previcon" className="w-[7px] h-[14px]" />
       </PaginationButton>
