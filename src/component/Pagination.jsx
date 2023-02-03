@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { PaginationButton } from "./PaginationButton";
 
-export const Pagination = ({ pages = 1, onPaginationChange }) => {
+export const Pagination = ({ pages = 1, onPageChange }) => {
   const [isActive, setIsActive] = useState(1);
 
   useEffect(() => {
-    // onPaginationChange();
+    onPageChange(isActive);
   }, [isActive]);
 
   return (

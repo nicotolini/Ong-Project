@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CandidateCard } from "../component/CandidateCard";
+import CandidateCard from "../component/CandidateCard";
 import { Pagination } from "../component/Pagination";
 import { candidates } from "../constants";
 import { getPaginationData } from "../utils";
