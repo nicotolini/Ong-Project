@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { ButtonHome } from "./ButtonHome";
 
 export const Navbar = () => {
@@ -12,22 +13,22 @@ export const Navbar = () => {
       <div className="flex justify-between flex-1">
         <ul className="flex_center flex-1 gap-[32px]  text-white-100 text-[18px]">
           <li className="hover:border-b-2 hover:border-emerald-400 border-b-2 border-transparent  transition-all ease-in-out duration-200">
-            <a href="/">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li className="hover:border-b-2 hover:border-emerald-400 border-b-2 border-transparent transition-all ease-in-out duration-200">
-            <a href="/job">Browse Job</a>
+            <Link to="/job">Browse Job</Link>
           </li>
           <li className="hover:border-b-2 hover:border-emerald-400 border-b-2 border-transparent transition-all ease-in-out duration-200">
-            <a href="/candidates">Candidates</a>
+            <Link to="/candidates">Candidates</Link>
           </li>
           <li className="hover:border-b-2 hover:border-emerald-400 border-b-2 border-transparent transition-all ease-in-out duration-200">
-            <a href="/about">About</a>
+            <Link to="/about">About</Link>
           </li>
         </ul>
 
         <div className="flex items-center gap-[47px] text-white-100 text-[18px]">
           <button>
-            <a href="/login">Sign In</a>
+            <Link to="/login">Sign In</Link>
           </button>
           <button className="rounded-[8px] bg-black h-[55px] px-[31px]">Post a Job</button>
         </div>
