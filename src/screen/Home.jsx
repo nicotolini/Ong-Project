@@ -10,6 +10,7 @@ const Home = () => {
   return (
     <>
       <Navbar />
+      
       <PopularCategories />
       <TopCompanies />
       <Loking />
