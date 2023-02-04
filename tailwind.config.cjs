@@ -13,6 +13,7 @@ module.exports = {
           50: "rgba(42, 42, 209, 0.2)",
           100: "#E6E6FA",
           200: "#4D4DDB",
+          300: "#2A5CD1",
           500: "#2A2AD1",
           600: "#191975",
           gradient: "linear-gradient(255.2deg, #2A2AD1 -5.67%, #4D4DDB 108.81%)",
