@@ -4,11 +4,11 @@ export const CardJob = ({ image, jobTitle, country, modality, date }) => {
   return (
     <div className="flex flex-col bg-white-100 min-h-[213px] max-w-full md:flex-row mb-[54px]">
       <div className="flex-1 flex flex-col md:flex-row md:items-start items-center pl-[38px] pt-[30px] pb-[40px]">
-        <div className="w-[143px] h-[143px] md:text-start text-center">
+        <div className="w-[143px] h-[143px] md:text-start text-center flex items-center p-5">
           <img src={image} alt={jobTitle} className="object-cover" />
         </div>
 
-        <div className="flex flex-col gap-[18px] ">
+        <div className="flex flex-col gap-[18px] justify-center flex-1 h-full ">
           <p className="text-black text-[24px] text-center md:text-start">{jobTitle}</p>
           <div className="flex gap-[8px]">
             <div className="flex gap-[4px]">

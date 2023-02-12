@@ -1,17 +1,31 @@
 
 import React  from 'react'
 import Input from './Input'
-import { useState } from 'react'
+import { useState , useEffect } from 'react'
 import ButtonPSearch from './ButtonPSearch';
+import useFetch from '../Hooks/useFetch';
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 const PopularSearch = () => {
     const [keyword, setKeyword] = useState();
     const [location, setLocation] = useState();
     const [category, setCategory] = useState();
     const [experience, setExperience] = useState();
+
+      const [users] = useFetch("https://remoteok.com/api?ref=producthunt")
+      const tags = 
+          users.length > 0 
+          ? users.flatMap((tags) => tags.tags).filter((v,i,a) => a.indexOf(v) === i  ) 
+          : ["error"] ;
+
   return (
     <section className='bg-violet-100 h-[30vh]'>
-        <div className='h-full flex flex-col justify-center'>
+        <div data-aos="fade-right"
+        data-aos-easing="ease-in-out"
+        data-aos-delay="200"
+        data-aos-duration="700" className='h-full flex flex-col justify-center'>
       <div className='flex gap-4  container mx-auto items-end justify-center'>
         <Input className="w-full max-w-[200px] border mt-1 block  px-3 py-3 bg-transparent font-semibold border-sky-500 rounded-md text-sm shadow-sm  focus:outline-none  text-center"
         placeholder={"Search Keyword"}
@@ -32,16 +46,11 @@ const PopularSearch = () => {
               className="w-full max-w-[160px] h-[46px] border  mt-1 block  px-3  bg-transparent font-semibold border-sky-500 rounded-md text-sm shadow-sm  focus:outline-none  text-center"
             >
               <option hidden>Category</option>
-              <option
-                value="ui/ux"
-              >
-                UI/UX
-              </option>
-              <option
-                value=""
-              >
-                asdasd
-              </option>
+              {
+                tags.length > 0 ? tags.map((tag, index) => {
+                  return <option key={index} value={tag}>{tag}</option>
+                }) : null
+              }
             </select>
             <select
               value={experience}

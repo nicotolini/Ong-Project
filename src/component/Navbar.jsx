@@ -1,17 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Button from "./Button";
 import { ButtonHome } from "./ButtonHome";
 
 export const Navbar = () => {
   return (
     <nav
-      className="h-[155px] flex pt-[23px] pl-[67px] pr-[73px]"
-      style={{ background: "linear-gradient(255.2deg, #2A2AD1 -5.67%, #4D4DDB 108.81%)" }}
-    >
-      <ButtonHome />
+      className="h-[110px] flex justify-center bg-transparent">
 
-      <div className="flex justify-between flex-1">
-        <ul className="flex_center flex-1 gap-[32px]  text-white-100 text-[18px]">
+      <div className="flex   container justify-between">
+      <ButtonHome />
+        <ul className="flex_center  gap-8  text-white-100 text-[18px]">
           <li className="hover:border-b-2 hover:border-emerald-400 border-b-2 border-transparent  transition-all ease-in-out duration-200">
             <Link to="/">Home</Link>
           </li>
@@ -26,11 +25,11 @@ export const Navbar = () => {
           </li>
         </ul>
 
-        <div className="flex items-center gap-[47px] text-white-100 text-[18px]">
-          <button>
+        <div className="flex items-center gap-8 text-white-100 text-[18px]">
+          <Button border="border-0" width="w-[70%]">
             <Link to="/login">Sign In</Link>
-          </button>
-          <button className="rounded-[8px] bg-black h-[55px] px-[31px]">Post a Job</button>
+          </Button>
+          <Button bg="bg-black" border="border-0" width="w-[200px]" >Post a Job</Button>
         </div>
       </div>
     </nav>

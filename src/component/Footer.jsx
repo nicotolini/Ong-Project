@@ -3,9 +3,9 @@ import Subcribe from "./Subcribe";
 
 const Footer = () => {
   return (
-    <footer  className="bg-white-200 ">
-      <div className="bg-black  clip-paht-footer h-[100vh] w-full bg-contain bg-no-repeat">
-        <div className="flex text-white-100 md:items-center items-end md:flex-nowrap flex-wrap container mx-auto h-screen ">
+    <footer  className="bg-white-200 md:h-[60vh] h-[40vh]">
+      <div className="bg-black  clip-paht-footer  w-full bg-contain bg-no-repeat flex h-full">
+        <div className="flex text-white-100 md:items-center items-end md:flex-nowrap flex-wrap container mx-auto  ">
           <div className="flex flex-col gap-5 text-lg flex-1 md:items-start items-center min-w-[300px]  text-white  ">
             <div className="flex gap-4 md:justify-start  justify-center items-center pb-5 ml-[-5px] md:text-xl text-sm">
               <img src="footerICON.png" className="w-[20%]" alt="" />
