@@ -1,3 +1,5 @@
+import jobs from "./jobs";
+
 const candidates = [
   { name: "Mei Nagano", job: "UI/UI Designer", image: "./src/assets/images-Candidates/one.png" },
   { name: "Taise Marukawa", job: "Web Programmer", image: "./src/assets/images-Candidates/two.png" },
@@ -13,4 +15,4 @@ const candidates = [
   { name: "Anju Emma", job: "UI/UI Designer", image: "./src/assets/images-Candidates/twelve.png" },
 ];
 
-export { candidates };
+export { candidates, jobs };
