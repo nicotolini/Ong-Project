@@ -5,6 +5,7 @@ import TextArea from "./TextArea";
 import Modal from "../Modal";
 
 const Form = () => {
+
   const [values, setValues] = useState({
     name: "",
     email: "",
@@ -23,9 +24,9 @@ const Form = () => {
   };
 
   return (
-    <div className="container m-auto px-32 py-8 mb-14">
-      <form className="bg-white-100 px-8 py-12 rounded-xl">
-        <h4 className="text-[32px] font-medium pb-8">Apply For The Job</h4>
+    <div className="mx-auto container">
+      <form className="bg-white-100 px-8 py-12 rounded-xl ">
+        <h4 className="text-[32px] font-semibold pb-8">Apply For The Job</h4>
 
         <div className="space-y-5">
           <div className="flex gap-8">

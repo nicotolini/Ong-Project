@@ -28,7 +28,7 @@ const InputFile = ({ placeholder, value, name, handleOnChange }) => {
       />
       <button
         type="button"
-        className="absolute top-[1px] right-2 rounded-[6px] bg-violet-500 text-white-100 px-4 py-1"
+        className="absolute top-[1px] right-[1px] rounded-[6px] bg-violet-500 text-white-100 px-4 py-1"
         onClick={handleClick}
       >
         Browse

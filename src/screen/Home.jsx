@@ -8,14 +8,14 @@ import TopCompanies from "../component/TopCompanies";
 import { Loking } from "./Loking";
 import { Testimonial } from "./Testimonial";
 import { SubHeading } from "../component/SubHeading";
-import CompanyProfile from "./CompanyProfile";
+import DetailJob from "./DetailJob";
+import BrowserJob from "./BrowserJob";
 
 const Home = () => {
   return (
     <>
-
-      <CompanyProfile/>
-      {/* <SubHeading button="true" subTitle="7457+ Job Listed" title="Find Your Dream Job" p="Wre provide online instant cash loans with quick approval that suit your term length"/>
+  <BrowserJob/>
+   {/* <SubHeading button="true" subTitle="7457+ Job Listed" title="Find Your Dream Job" p="Wre provide online instant cash loans with quick approval that suit your term length"/>
       <PopularSearch/>
       <PopularCategories/>
       <TopCompanies/>

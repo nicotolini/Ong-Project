@@ -9,7 +9,6 @@ import { jobs } from "../constants";
 const DetailJob = () => {
   return (
     <div className="bg-violet-100">
-      <Navbar />
       <SubHeading subTitle="" title="Titulo job" />
       <JobDescription
         country={jobs[9].country}
@@ -17,7 +16,7 @@ const DetailJob = () => {
         image={jobs[4].image}
         modality={jobs[5].modality}
       />
-      <Form />
+      
       <Footer />
     </div>
   );
