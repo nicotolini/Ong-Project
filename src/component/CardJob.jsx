@@ -1,6 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-export const CardJob = ({ image, jobTitle, country, modality, date }) => {
+export const CardJob = ({ id, image, jobTitle, country, modality, date }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`job/${id}`);
+  };
+
   return (
     <div className="flex flex-col box-shadow rounded-md bg-white-100 min-h-[213px] max-w-full md:flex-row mt-[50px] ">
       <div className="flex-1 flex flex-col md:flex-row md:items-start items-center pl-[38px] pt-[30px] pb-[40px]">
@@ -30,7 +37,10 @@ export const CardJob = ({ image, jobTitle, country, modality, date }) => {
               <img src="/hearticon.svg" alt="love-icon" />
             </button>
 
-            <button className="bg-black text-white-100 pt-[13px] pb-[6px] pl-[24px] pr-[24px] rounded-[7px]">
+            <button
+              className="bg-black text-white-100 pt-[13px] pb-[6px] pl-[24px] pr-[24px] rounded-[7px]"
+              onClick={handleClick}
+            >
               Apply Now
             </button>
           </div>
