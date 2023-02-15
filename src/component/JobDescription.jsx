@@ -1,15 +1,18 @@
+import Form from "../component/Form/Form";
+
 const JobDescription = ({ image, jobTitle, country, modality }) => {
   return (
     <div className="container m-auto py-6">
       <div className="flex gap-6">
-        <div className="flex-1 bg-white-100 rounded-xl">
-          <div className="flex-1 flex flex-col md:flex-row md:items-start items-center pl-[38px] pt-[30px] pb-[40px]">
-            <div className="w-[143px] h-[143px] md:text-start text-center">
+        <div className="flex-1 flex flex-col gap-6">
+          <div className=" bg-white-100 rounded-xl">
+          <div className="flex flex-col md:flex-row md:items-start items-center py-8 pl-9 gap-6">
+            <div className="w-[130px] h-[130px] md:text-start text-center">
               <img src={image} alt={jobTitle} className="object-cover w-full" />
             </div>
 
-            <div className="flex flex-col gap-[18px] pl-8">
-              <p className="text-black text-[24px] text-center md:text-start">{jobTitle}</p>
+            <div className="flex flex-col gap-[18px]  ">
+              <p className="text-black text-[24px] text-center md:text-start font-semibold">{jobTitle}</p>
               <div className="flex gap-[8px]">
                 <div className="flex gap-[4px]">
                   <img src="/locationicon.svg" alt="location-icon" />
@@ -24,8 +27,8 @@ const JobDescription = ({ image, jobTitle, country, modality }) => {
           </div>
           <div className="border-t-2 border-gray-400 border-solid p-9 pb-12">
             <div className="space-y-6">
-              <h3 className="text-[24px]">Job Description</h3>
-              <p className="text-[20px]">
+              <h3 className="text-[24px] font-semibold">Job Description</h3>
+              <p className="text-[20px] ">
                 There are many variations of passages of Lorem Ipsum available, but the majority have suffered
                 alteration in some form, by injected humour, or randomised words which don't look even slightly
                 believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything
@@ -39,7 +42,7 @@ const JobDescription = ({ image, jobTitle, country, modality }) => {
             </div>
 
             <div className="space-y-6 pt-8">
-              <h3 className="text-[24px]">Responsibility</h3>
+              <h3 className="text-[24px] font-semibold">Responsibility</h3>
 
               <p className="text-[20px]">
                 There are many variations of passages of Lorem Ipsum available, but the majority have suffered
@@ -49,11 +52,13 @@ const JobDescription = ({ image, jobTitle, country, modality }) => {
               </p>
             </div>
           </div>
+          </div>
+          <Form />
         </div>
 
-        <div className="flex-2 h-full flex flex-col space-y-4">
+        <div className=" h-full flex flex-col space-y-4">
           <div className="bg-white-100 rounded-xl">
-            <div className="px-4 py-10 text-[24px]">Job Summary</div>
+            <div className="px-4 py-10 text-[24px] font-semibold">Job Summary</div>
             <div className="border-t-2 border-gray-400 border-solid">
               <div className="space-y-4 p-4">
                 <div className="flex items-center gap-4">
@@ -75,7 +80,7 @@ const JobDescription = ({ image, jobTitle, country, modality }) => {
               </div>
             </div>
           </div>
-          <div className="bg-white-100 rounded-xl flex gap-3 p-4">
+          <div className="bg-white-100 rounded-xl flex gap-3 items-center p-3">
             <p>Share: </p>
             <div className="flex gap-3">
               <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">

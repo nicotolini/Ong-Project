@@ -6,6 +6,9 @@ module.exports = {
       custom: "0 2px 4px rgba(0, 0, 0, 0.5)",
     },
     extend: {
+      backgroundImage: {
+        'gradient-nav': "linear-gradient(260.37deg, #2ABDD1 -7.71%, #4D4DDB 100%)",
+     },
       colors: {
         black: "#000000",
         white: { 100: "#FFFFFF", 200: "#E6E6FA" },

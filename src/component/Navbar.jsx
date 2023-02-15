@@ -5,7 +5,7 @@ import { ButtonHome } from "./ButtonHome";
 
 export const Navbar = () => {
   return (
-    <nav
+    <div
       className="h-[110px] flex justify-center bg-transparent">
 
       <div className="flex   container justify-between">
@@ -32,6 +32,6 @@ export const Navbar = () => {
           <Button bg="bg-black" border="border-0" width="w-[200px]" >Post a Job</Button>
         </div>
       </div>
-    </nav>
+    </div>
   );
 };

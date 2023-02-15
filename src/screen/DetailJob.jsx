@@ -1,5 +1,4 @@
 import React from "react";
-import { Navbar } from "../component/Navbar";
 import { SubHeading } from "../component/SubHeading";
 import Form from "../component/Form/Form";
 import JobDescription from "../component/JobDescription";
@@ -14,7 +13,6 @@ const DetailJob = () => {
   return (
     <div className="bg-violet-100">
       <SubHeading subTitle="" title="Titulo job" />
-
       {job ? (
         <>
           <JobDescription country={job.country} jobTitle={job.job} image={job.image} modality={job.modality} />
