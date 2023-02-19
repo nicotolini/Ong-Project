@@ -5,6 +5,7 @@ import Footer from "../component/Footer";
 import TarjetFilterJob from "../component/TarjetFilterJob";
 import jobs from "../constants/jobs";
 import { CardJob } from "../component/CardJob";
+import { Pagination } from "../component/Pagination";
 const BrowserJob = () => {
   const [company, setCompany] = useState("");
   const [country, setLocation] = useState("");
@@ -197,7 +198,7 @@ const BrowserJob = () => {
           {filter.some((obj) => {
             return Object.values(obj).some((value) => value !== "");
           })
-            ? filteredJobs
+            ?  filteredJobs
                 .slice(0, 4)
                 .map((job, index) => (
                   <CardJob
@@ -208,7 +209,9 @@ const BrowserJob = () => {
                     country={job.country}
                     date={job.published.substring(0, 10)}
                   />
+                  
                 ))
+                
             : null}
         </div>
       </div>

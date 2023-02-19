@@ -14,14 +14,18 @@ import BrowserJob from "./BrowserJob";
 const Home = () => {
   return (
     <>
-  <BrowserJob/>
-   {/* <SubHeading button="true" subTitle="7457+ Job Listed" title="Find Your Dream Job" p="Wre provide online instant cash loans with quick approval that suit your term length"/>
-      <PopularSearch/>
-      <PopularCategories/>
-      <TopCompanies/>
-      <Loking/>
-      <Testimonial/>
-      <Footer/> */}
+      <SubHeading
+        button="true"
+        subTitle="7457+ Job Listed"
+        title="Find Your Dream Job"
+        p="Wre provide online instant cash loans with quick approval that suit your term length"
+      />
+      <PopularSearch />
+      <PopularCategories />
+      <TopCompanies />
+      <Loking />
+      <Testimonial />
+      <Footer />
     </>
   );
 };

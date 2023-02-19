@@ -1,6 +1,12 @@
-import React from "react";
+
+import React ,{ useState } from "react";
+
 
 export const CardJob = ({ image, jobTitle, country, modality, date }) => {
+  const [favorite, setfavorite] = useState(false)
+  const handleClick = () =>{
+    setfavorite(!favorite)
+  }
   return (
     <div className="flex flex-col box-shadow rounded-md bg-white-100 min-h-[213px] max-w-full md:flex-row mt-[50px] ">
       <div className="flex-1 flex flex-col md:flex-row md:items-start items-center pl-[38px] pt-[30px] pb-[40px]">
@@ -26,11 +32,11 @@ export const CardJob = ({ image, jobTitle, country, modality, date }) => {
       <div className="flex-1 flex justify-center items-center md:justify-end md:items-start pt-[24px] md:pr-[29px] pl-[]">
         <div className="flex items-center md:items-start flex-col">
           <div className="flex gap-[20px]">
-            <button className="flex_center w-[44px] h-[44px] bg-violet-100 rounded-[6px]">
-              <img src="/hearticon.svg" alt="love-icon" />
+            <button onClick={handleClick} className="flex_center w-[44px] h-[44px] bg-violet-100 rounded-[6px]">
+                <img src={favorite ? `https://icongr.am/entypo/heart.svg?size=34&color=bd0000` :`https://icongr.am/entypo/heart-outlined.svg?size=34&color=000000`} alt="love-icon" />
             </button>
 
-            <button className="bg-black text-white-100 pt-[13px] pb-[6px] pl-[24px] pr-[24px] rounded-[7px]">
+            <button className="bg-black text-white-100 text-center px-[24px] rounded-[7px]">
               Apply Now
             </button>
           </div>
