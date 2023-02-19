@@ -1,10 +1,17 @@
 
 import React ,{ useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+export const CardJob = ({ id, image, jobTitle, country, modality, date }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`job/${id}`);
+  };
 
 
-export const CardJob = ({ image, jobTitle, country, modality, date }) => {
   const [favorite, setfavorite] = useState(false)
-  const handleClick = () =>{
+  const handleChange = () =>{
     setfavorite(!favorite)
   }
   return (
@@ -32,11 +39,14 @@ export const CardJob = ({ image, jobTitle, country, modality, date }) => {
       <div className="flex-1 flex justify-center items-center md:justify-end md:items-start pt-[24px] md:pr-[29px] pl-[]">
         <div className="flex items-center md:items-start flex-col">
           <div className="flex gap-[20px]">
-            <button onClick={handleClick} className="flex_center w-[44px] h-[44px] bg-violet-100 rounded-[6px]">
+            <button onClick={handleChange} className="flex_center w-[44px] h-[44px] bg-violet-100 rounded-[6px]">
                 <img src={favorite ? `https://icongr.am/entypo/heart.svg?size=34&color=bd0000` :`https://icongr.am/entypo/heart-outlined.svg?size=34&color=000000`} alt="love-icon" />
             </button>
 
-            <button className="bg-black text-white-100 text-center px-[24px] rounded-[7px]">
+            <button
+              className="bg-black text-white-100 text-center px-[24px] rounded-[7px]"
+              onClick={handleClick}
+            >
               Apply Now
             </button>
           </div>

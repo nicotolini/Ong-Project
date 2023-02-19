@@ -6,7 +6,7 @@ import { getPaginationData } from "../utils";
 
 export const CandidatesList = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const pagination = getPaginationData(8, candidates);
+  const pagination = getPaginationData(4, candidates);
 
   const handleOnPageChange = (index) => {
     setCurrentPage(index);
@@ -20,7 +20,12 @@ export const CandidatesList = () => {
         ))}
       </div>
 
-      <Pagination pages={pagination.quantity} onPageChange={handleOnPageChange} />
+      <Pagination
+        pages={pagination.quantity}
+        onPageChange={handleOnPageChange}
+        active={currentPage}
+        setActive={setCurrentPage}
+      />
     </div>
   );
 };

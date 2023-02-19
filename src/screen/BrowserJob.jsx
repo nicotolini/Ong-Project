@@ -6,9 +6,12 @@ import TarjetFilterJob from "../component/TarjetFilterJob";
 import jobs from "../constants/jobs";
 import { CardJob } from "../component/CardJob";
 import { Pagination } from "../component/Pagination";
+import { getPaginationData } from "../utils";
+
 const BrowserJob = () => {
   const [company, setCompany] = useState("");
   const [country, setLocation] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
   const [filter, setFilter] = useState([
     { company: "" },
     { country: "" },
@@ -16,22 +19,23 @@ const BrowserJob = () => {
     { experience: "" },
     { modality: "" },
   ]);
+
+  const handleOnPageChange = (index) => {
+    setCurrentPage(index);
+  };
+
   const handleKeyUp = (index, property, e, setState) => {
-     const updatedFilter = [...filter];
-      updatedFilter[index][property] = e.target.value;
-      setFilter(updatedFilter);
-      setState ? setState("") : null    };
+    const updatedFilter = [...filter];
+    updatedFilter[index][property] = e.target.value;
+    setFilter(updatedFilter);
+    setState ? setState("") : null;
+    setCurrentPage(1);
+  };
   const categorys =
-    jobs.length > 0
-      ? jobs.flatMap((tags) => tags.job).filter((v, i, a) => a.indexOf(v) === i)
-      : ["error"];
+    jobs.length > 0 ? jobs.flatMap((tags) => tags.job).filter((v, i, a) => a.indexOf(v) === i) : ["error"];
   const sortedCategorys = [...categorys].sort((a, b) => b.length - a.length);
   const JobTypes =
-    jobs.length > 0
-      ? jobs
-          .flatMap((tags) => tags.modality)
-          .filter((v, i, a) => a.indexOf(v) === i)
-      : ["error"];
+    jobs.length > 0 ? jobs.flatMap((tags) => tags.modality).filter((v, i, a) => a.indexOf(v) === i) : ["error"];
   const sortedJobTypes = [...JobTypes].sort();
   const filteredJobs = jobs.filter(
     (job) =>
@@ -41,15 +45,14 @@ const BrowserJob = () => {
       (filter[3].experience === "" || job.experience === filter[3].experience) &&
       (filter[4].modality === "" || job.modality === filter[4].modality)
   );
+  const pagination = getPaginationData(3, filteredJobs);
 
   return (
     <>
       <SubHeading subTitle="7457+ Job List" title="Job List" />
       <div className=" bg-white-200 pb-[10rem] h-full flex flex-col gap-10">
         <div className="flex flex-col   w-full container mx-auto rounded-md box-shadow bg-white-100">
-          <h3 className="pt-8 pl-10 text-2xl font-extrabold uppercase">
-            Filter Job
-          </h3>
+          <h3 className="pt-8 pl-10 text-2xl font-extrabold uppercase">Filter Job</h3>
           <div className="flex  justify-center gap-5 px-4 py-4 border-b-[1px] items-end">
             <Input
               className="w-full max-w-[200px] border  block  px-3 py-3 bg-transparent font-semibold border-sky-500 rounded-md text-sm shadow-sm  focus:outline-none  text-center"
@@ -59,11 +62,11 @@ const BrowserJob = () => {
               handleOnChange={(e) => {
                 setCompany(e.target.value);
               }}
-             handleOnKeyUp={(e) => {
-               if (e.key === "Enter" && company){
-                 handleKeyUp(0, "company", e, setCompany)}
-             }}
-             
+              handleOnKeyUp={(e) => {
+                if (e.key === "Enter" && company) {
+                  handleKeyUp(0, "company", e, setCompany);
+                }
+              }}
             />
             <Input
               className="w-full max-w-[200px] border  block  px-3 py-3 bg-transparent font-semibold border-sky-500 rounded-md text-sm shadow-sm  focus:outline-none  text-center"
@@ -76,13 +79,14 @@ const BrowserJob = () => {
               }}
               handleOnKeyUp={(e) => {
                 if (e.key === "Enter" && country) {
-                  handleKeyUp(1, "country", e, setLocation)  }
+                  handleKeyUp(1, "country", e, setLocation);
+                }
               }}
             />
             <select
               value={filter[2].job}
               onChange={(e) => {
-                handleKeyUp(2, "job", e)
+                handleKeyUp(2, "job", e);
               }}
               id="job"
               className="w-full max-w-[200px] h-[46px] border   block  px-3  bg-transparent font-semibold border-sky-500 rounded-md text-sm shadow-sm  focus:outline-none  text-center"
@@ -101,7 +105,7 @@ const BrowserJob = () => {
             <select
               value={filter[2].experience}
               onChange={(e) => {
-                handleKeyUp(3, "experience", e)
+                handleKeyUp(3, "experience", e);
               }}
               id="experience"
               className="w-full max-w-[200px] h-[46px] border   block  px-3  bg-transparent font-semibold  border-sky-500 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none  text-center"
@@ -115,7 +119,7 @@ const BrowserJob = () => {
             <select
               value={filter[4].modality}
               onChange={(e) => {
-                handleKeyUp(4, "modality", e)
+                handleKeyUp(4, "modality", e);
               }}
               id="modality"
               className="w-full max-w-[200px] h-[46px] border   block  px-3  bg-transparent font-semibold  border-sky-500 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none  text-center"
@@ -132,9 +136,7 @@ const BrowserJob = () => {
                 : null}
             </select>
 
-            <button
-              className="px-8 py-[13px] rounded-md text-sm shadow-sm text-white-100 bg-violet-500"
-            >
+            <button className="px-8 py-[13px] rounded-md text-sm shadow-sm text-white-100 bg-violet-500">
               Find Job
             </button>
           </div>
@@ -194,26 +196,30 @@ const BrowserJob = () => {
             {}
           </div>
         </div>
-        <div className="container px-[8rem] mx-auto">
+        <div className="container px-[8rem] mx-auto min-h-[789px]">
           {filter.some((obj) => {
             return Object.values(obj).some((value) => value !== "");
-          })
-            ?  filteredJobs
-                .slice(0, 4)
-                .map((job, index) => (
-                  <CardJob
-                    key={index}
-                    modality={job.modality}
-                    image={job.image}
-                    jobTitle={job.company}
-                    country={job.country}
-                    date={job.published.substring(0, 10)}
-                  />
-                  
-                ))
-                
+          }) && pagination.pages[currentPage]
+            ? pagination.pages[currentPage].map((job, index) => (
+                <CardJob
+                  key={index}
+                  id={job._id}
+                  modality={job.modality}
+                  image={job.image}
+                  jobTitle={job.company}
+                  country={job.country}
+                  date={job.published.substring(0, 10)}
+                />
+              ))
             : null}
         </div>
+
+        <Pagination
+          onPageChange={handleOnPageChange}
+          pages={jobs.length === filteredJobs.length ? 0 : pagination.quantity}
+          active={currentPage}
+          setActive={setCurrentPage}
+        />
       </div>
       <Footer />
     </>
