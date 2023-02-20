@@ -6,7 +6,6 @@ import { CandidatesList } from "./CandidatesList";
 const Candidates = () => {
   return (
     <div className="bg-violet-100">
-
       <SubHeading title="Candidates" subTitle="7457+ Cadidates List" />
 
       <CandidatesList />

@@ -8,8 +8,8 @@ const Footer = () => {
         <div className="flex text-white-100 md:items-center items-end md:flex-nowrap flex-wrap container mx-auto  ">
           <div className="flex flex-col gap-5 text-lg flex-1 md:items-start items-center min-w-[300px]  text-white  ">
             <div className="flex gap-4 md:justify-start  justify-center items-center pb-5 ml-[-5px] md:text-xl text-sm">
-              <img src="footerICON.png" className="w-[20%]" alt="" />
-              <h3 className="font-bold md:text-2xl text-lg">Job Search</h3>
+              <img src="https://icongr.am/fontawesome/paper-plane-o.svg?size=43&color=ffffff" className="w-12" alt="" />
+              <h3 className="font-bold md:text-2xl text-lg">Job Dev</h3>
             </div>
             <h4 className="font-black md:text-2xl text-lg tracking-wide">
               Find Your Dream Job

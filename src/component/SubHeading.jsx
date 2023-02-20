@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Button from "./Button";
 import { Navbar } from "./Navbar";
 
@@ -17,13 +18,16 @@ export const SubHeading = ({ title, subTitle, p, button }) => {
               {p}
             </p>
             {button === "true" && (
+              
               <Button
                 bg="bg-black"
                 border="border-0"
                 width="w-[150px]"
                 txColor="text-white-100"
-              >
+                >
+                <Link to="BrowserJob">
                 Browser Job
+                </Link>
               </Button>
             )}
           </div>

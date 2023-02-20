@@ -11,12 +11,14 @@ import Profile from "./Logins/Profile";
 import Login from "./Logins/Login";
 import Candidates from "./screen/Candidates";
 import DetailJob from "./screen/DetailJob";
+import BrowserJob from "./screen/BrowserJob";
 
 function App() {
   return (
     <Routes>
       <Route path="*" element={<Navigate replace to="/" />} />
       <Route path="/" element={<Home />} />
+      <Route path="/BrowserJob" element={<BrowserJob />} />
       <Route path="/job/:id" element={<DetailJob />} />
       <Route path="/Login" element={<Login />} />
       <Route path="/SignUp" element={<SignUp />} />

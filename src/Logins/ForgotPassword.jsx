@@ -10,6 +10,11 @@ const ForgotPassword = () => {
   
   return (
     <div className="flex items-center justify-center min-h-screen  bg-[url('bg5.svg')] ">
+      <div className="absolute top-[2rem] left-[2rem] hvr-grow">
+        <Link to="/">
+        <img src="https://icongr.am/fontawesome/arrow-circle-left.svg?size=70&color=ffffff" alt="" />
+        </Link>
+      </div>
       <div
         data-aos="zoom-in-down"
         data-aos-easing="linear"

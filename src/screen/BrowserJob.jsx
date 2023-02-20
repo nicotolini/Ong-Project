@@ -32,17 +32,25 @@ const BrowserJob = () => {
     setCurrentPage(1);
   };
   const categorys =
-    jobs.length > 0 ? jobs.flatMap((tags) => tags.job).filter((v, i, a) => a.indexOf(v) === i) : ["error"];
+    jobs.length > 0
+      ? jobs.flatMap((tags) => tags.job).filter((v, i, a) => a.indexOf(v) === i)
+      : ["error"];
   const sortedCategorys = [...categorys].sort((a, b) => b.length - a.length);
   const JobTypes =
-    jobs.length > 0 ? jobs.flatMap((tags) => tags.modality).filter((v, i, a) => a.indexOf(v) === i) : ["error"];
+    jobs.length > 0
+      ? jobs
+          .flatMap((tags) => tags.modality)
+          .filter((v, i, a) => a.indexOf(v) === i)
+      : ["error"];
   const sortedJobTypes = [...JobTypes].sort();
   const filteredJobs = jobs.filter(
     (job) =>
       (filter[0].company === "" || job.company === filter[0].company) &&
-      (filter[1].country === "" || job.country.toLowerCase() === filter[1].country.toLowerCase()) &&
+      (filter[1].country === "" ||
+        job.country.toLowerCase() === filter[1].country.toLowerCase()) &&
       (filter[2].job === "" || job.job === filter[2].job) &&
-      (filter[3].experience === "" || job.experience === filter[3].experience) &&
+      (filter[3].experience === "" ||
+        job.experience === filter[3].experience) &&
       (filter[4].modality === "" || job.modality === filter[4].modality)
   );
   const pagination = getPaginationData(3, filteredJobs);
@@ -52,7 +60,9 @@ const BrowserJob = () => {
       <SubHeading subTitle="7457+ Job List" title="Job List" />
       <div className=" bg-white-200 pb-[10rem] h-full flex flex-col gap-10">
         <div className="flex flex-col   w-full container mx-auto rounded-md box-shadow bg-white-100">
-          <h3 className="pt-8 pl-10 text-2xl font-extrabold uppercase">Filter Job</h3>
+          <h3 className="pt-8 pl-10 text-2xl font-extrabold uppercase">
+            Filter Job
+          </h3>
           <div className="flex  justify-center gap-5 px-4 py-4 border-b-[1px] items-end">
             <Input
               className="w-full max-w-[200px] border  block  px-3 py-3 bg-transparent font-semibold border-sky-500 rounded-md text-sm shadow-sm  focus:outline-none  text-center"
@@ -213,13 +223,18 @@ const BrowserJob = () => {
               ))
             : null}
         </div>
-
-        <Pagination
-          onPageChange={handleOnPageChange}
-          pages={jobs.length === filteredJobs.length ? 0 : pagination.quantity}
-          active={currentPage}
-          setActive={setCurrentPage}
-        />
+        {filter.some((obj) => {
+          return Object.values(obj).some((value) => value !== "");
+        }) ? (
+          <Pagination
+            onPageChange={handleOnPageChange}
+            pages={
+              jobs.length === filteredJobs.length ? 0 : pagination.quantity
+            }
+            active={currentPage}
+            setActive={setCurrentPage}
+          />
+        ) : null}
       </div>
       <Footer />
     </>

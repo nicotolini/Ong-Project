@@ -1,11 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const ButtonHome = () => {
   return (
-    <div className="flex items-center gap-4">
-      <img src="/searchicon.svg" alt="search-icon" className="w-20" />
-
-      <h3 className="text-[32px] text-white-100">Job Search</h3>
+    <div className="flex items-center">
+      <Link className="flex items-center gap-4">
+      <img src="https://icongr.am/fontawesome/paper-plane-o.svg?size=43&color=ffffff" alt="search-icon" className="w-12" />
+      <h3 className="text-3xl text-white-100">Job Dev</h3>
+      </Link>
     </div>
   );
 };
