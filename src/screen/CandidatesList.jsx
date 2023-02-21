@@ -6,7 +6,7 @@ import { getPaginationData } from "../utils";
 
 export const CandidatesList = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const pagination = getPaginationData(4, candidates);
+  const pagination = getPaginationData(12, candidates);
 
   const handleOnPageChange = (index) => {
     setCurrentPage(index);
@@ -14,7 +14,7 @@ export const CandidatesList = () => {
 
   return (
     <div className="bg-violet-100 pl-[78px] pr-[108px] pt-[68px] pb-[129px]">
-      <div className="grid_candidates min-h-[764px]">
+      <div className="container mx-auto place-content-center grid_candidates min-h-[764px]">
         {pagination.pages[currentPage].map((candidate, index) => (
           <CandidateCard key={index} image={candidate.image} name={candidate.name} position={candidate.job} />
         ))}

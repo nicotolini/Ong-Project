@@ -7,6 +7,7 @@ import jobs from "../constants/jobs";
 import { CardJob } from "../component/CardJob";
 import { Pagination } from "../component/Pagination";
 import { getPaginationData } from "../utils";
+import BtnScroll from "../component/BtnScroll";
 
 const BrowserJob = () => {
   const [company, setCompany] = useState("");

@@ -3,7 +3,7 @@ import React  from 'react'
 import Input from './Input'
 import { useState , useEffect } from 'react'
 import ButtonPSearch from './ButtonPSearch';
-import useFetch from '../Hooks/useFetch';
+import jobs from "../constants/jobs";
 import AOS from "aos";
 import "aos/dist/aos.css";
 AOS.init();
@@ -14,10 +14,9 @@ const PopularSearch = () => {
     const [category, setCategory] = useState();
     const [experience, setExperience] = useState();
 
-      const [users] = useFetch("https://remoteok.com/api?ref=producthunt")
       const tags = 
-          users.length > 0 
-          ? users.flatMap((tags) => tags.tags).filter((v,i,a) => a.indexOf(v) === i  ) 
+          jobs.length > 0 
+          ? jobs.flatMap((tags) => tags.job).filter((v,i,a) => a.indexOf(v) === i  ) 
           : ["error"] ;
 
   return (

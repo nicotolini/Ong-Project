@@ -1,13 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Button from "./Button";
+import { useMediaQuery } from "react-responsive";
 import { Navbar } from "./Navbar";
 
 export const SubHeading = ({ title, subTitle, p, button }) => {
+  const isMobile = useMediaQuery({ minWidth: 640 });
   return (
     <nav className="bg-white-200">
       <div
-        className="h-[620px] clip-paht-navbar bg-gradient-nav"
+        className={`h-[620px] ${isMobile ? "clip-paht-navbar" : ""}  bg-gradient-nav`}
       >
         <Navbar />
         <div className="container mx-auto  pt-20">

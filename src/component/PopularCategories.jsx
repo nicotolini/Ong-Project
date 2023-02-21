@@ -3,15 +3,18 @@ import mark from "../assets/images-PopularCategories/mark.png";
 import programm from "../assets/images-PopularCategories/programm.png";
 import script from "../assets/images-PopularCategories/script.png";
 import web from "../assets/images-PopularCategories/web.png";
+import { useMediaQuery } from "react-responsive";
+
 import Card from "./Card";
 import AOS from "aos";
 import "aos/dist/aos.css";
 AOS.init();
 
 const PopularCategories = () => {
+  const isMobile = useMediaQuery({ minWidth: 640 });
   return (
     <section className="bg-violet-100">
-      <div className="xl:h-[78vh] h-[178vh] sm:h-[87vh] flex w-full pt-10 sm:pt-0 items-center justify-center clip-path-popular bg-violet-500 ">
+      <div className={`xl:h-[78vh] h-[178vh] sm:h-[87vh] flex w-full pt-10 sm:pt-0 items-center justify-center ${isMobile ? "clip-path-popular" :""} bg-violet-500 `}>
         <div data-aos="fade-left"
         data-aos-easing="ease-in-out"
         data-aos-delay="200"

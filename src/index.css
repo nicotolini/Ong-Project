@@ -40,8 +40,10 @@ bakground-color : #4D4DDB ;
 
 .grid_candidates {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(4, 300px);
+  grid-template-rows: repeat(3, 360px);
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
 }
 .hvr-grow {
   display: inline-block;
@@ -58,3 +60,17 @@ bakground-color : #4D4DDB ;
   -webkit-transform: scale(1.1);
   transform: scale(1.2);
 }
+
+.mobile-menu {
+  display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100vh;
+    position: fixed;
+    width: 100%;
+    border-top: 1px solid;
+    top: 6rem;
+    background: linear-gradient(260.37deg, #2ABDD1 -7.71%, #4D4DDB 100%);
+    z-index: 10000;
+}
+

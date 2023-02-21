@@ -10,6 +10,7 @@ import { Testimonial } from "./Testimonial";
 import { SubHeading } from "../component/SubHeading";
 import DetailJob from "./DetailJob";
 import BrowserJob from "./BrowserJob";
+import BtnScroll from "../component/BtnScroll";
 
 const Home = () => {
   return (
@@ -20,7 +21,8 @@ const Home = () => {
         title="Find Your Dream Job"
         p="Wre provide online instant cash loans with quick approval that suit your term length"
       />
-      <PopularSearch />
+      <BtnScroll/>
+
       <PopularCategories />
       <TopCompanies />
       <Loking />
